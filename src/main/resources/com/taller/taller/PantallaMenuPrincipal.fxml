@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.PantallaMenuPrincipalController">
+   <children>
+      <FlowPane hgap="80.0" layoutX="25.0" layoutY="50.0" prefHeight="150.0" prefWidth="350.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <ImageView fx:id="accountButton" fitHeight="121.0" fitWidth="132.0" onMouseClicked="#onAccountButtonClick" onMousePressed="#onAccountButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@../../../assets/account.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="scheduleButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onScheduleButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@../../../assets/schedule.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+      <Label alignment="CENTER" layoutX="59.0" layoutY="14.0" prefHeight="17.0" prefWidth="69.0" text="Clientes">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <FlowPane hgap="80.0" layoutX="25.0" layoutY="221.0" prefHeight="150.0" prefWidth="350.0" AnchorPane.bottomAnchor="20.0">
+         <children>
+            <ImageView fx:id="worksheetButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onWorksheetButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@../../../assets/worksheet.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="reportsButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onReportsButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <image>
+                  <Image url="@../../../assets/report.png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+      <Label alignment="CENTER" layoutX="262.0" layoutY="14.0" prefHeight="17.0" prefWidth="69.0" text="Agenda">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="28.0" layoutY="200.0" prefHeight="26.0" prefWidth="131.0" text="Hoja de Trabajo">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="255.0" layoutY="200.0" prefHeight="26.0" prefWidth="83.0" text="Informes">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
