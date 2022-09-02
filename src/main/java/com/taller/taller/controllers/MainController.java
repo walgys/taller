@@ -1,5 +1,6 @@
-package com.taller.taller;
+package com.taller.taller.controllers;
 
+import com.taller.taller.MainApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
