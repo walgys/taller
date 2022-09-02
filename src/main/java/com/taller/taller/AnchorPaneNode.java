@@ -1,7 +1,11 @@
 package com.taller.taller;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 /**
@@ -22,19 +26,29 @@ public class AnchorPaneNode extends AnchorPane {
         // Add action handler for mouse clicked
         this.setOnMouseClicked(e -> {
             if (available){
-                System.out.println("Available");
+                Stage stage = (Stage) this.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaReservarTurno.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 400, 400);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                stage.setTitle("Reservar turno");
+                stage.setScene(scene);
             }else{
-                System.out.println("Unavailable day");
+                Stage stage = (Stage) this.getScene().getWindow();
+                FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("ModalCancelarTurno.fxml"));
+                Scene scene = null;
+                try {
+                    scene = new Scene(fxmlLoader.load(), 400, 400);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                stage.setTitle("Cancelar turno");
+                stage.setScene(scene);
             }
         });
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public void setNotAvailable(){

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
+<AnchorPane prefHeight="520.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
    <children>
-      <ComboBox layoutX="115.0" layoutY="34.0" prefWidth="150.0" />
-      <Label alignment="TOP_CENTER" layoutX="31.0" layoutY="38.0" prefHeight="17.0" prefWidth="72.0" text="Especialidad" />
-      <ComboBox layoutX="471.0" layoutY="34.0" prefWidth="150.0" />
-      <Label alignment="TOP_CENTER" layoutX="400.0" layoutY="38.0" prefHeight="17.0" prefWidth="59.0" text="Mecánico" />
-      <FlowPane fx:id="agendaAnchor" alignment="CENTER" columnHalignment="CENTER" layoutX="25.0" layoutY="88.0" prefHeight="400.0" prefWidth="600.0" />
+      <ComboBox layoutX="115.0" layoutY="24.0" prefWidth="150.0" AnchorPane.topAnchor="20.0" />
+      <Label alignment="TOP_CENTER" layoutX="25.0" layoutY="28.0" prefHeight="17.0" prefWidth="72.0" text="Especialidad" AnchorPane.topAnchor="24.0" />
+      <ComboBox layoutX="475.0" layoutY="24.0" prefWidth="150.0" AnchorPane.topAnchor="20.0" />
+      <Label alignment="TOP_CENTER" layoutX="399.0" layoutY="24.0" prefHeight="17.0" prefWidth="59.0" text="Mecánico" AnchorPane.topAnchor="24.0" />
+      <FlowPane fx:id="agendaAnchor" alignment="CENTER" columnHalignment="CENTER" layoutX="25.0" layoutY="62.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.topAnchor="60.0" />
+      <Button fx:id="btnVolverAgenda" layoutX="25.0" layoutY="487.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" />
+      <Button fx:id="btnAceptarAgenda" layoutX="469.0" layoutY="487.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Aceptar &gt;&gt;" AnchorPane.bottomAnchor="20.0" />
    </children>
 </AnchorPane>
