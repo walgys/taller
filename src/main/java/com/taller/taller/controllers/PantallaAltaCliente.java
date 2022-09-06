@@ -9,13 +9,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class InformeMensual {
+public class PantallaAltaCliente {
 
     @FXML
-    private Button btnVolverInfMen;
+    private Button btnVolverAltaCliente;
 
     @FXML
-    private Button btnImprimirInfMen;
+    private Button btnAltaCliente;
 
     @FXML
     protected void initialize(){
@@ -24,20 +24,20 @@ public class InformeMensual {
 
     @FXML
     protected void onVolverButtonClick() throws IOException {
-        Stage stage = (Stage) btnImprimirInfMen.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
+        Stage stage = (Stage) btnVolverAltaCliente.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Menu Principal");
+        stage.setTitle("Alta cliente");
         stage.setScene(scene);
     }
 
     @FXML
-    protected void onImprimirButtonClick() throws IOException {
-        System.out.println("imprimiendo informe");
-        Stage stage = (Stage) btnVolverInfMen.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaInformes.fxml"));
+    protected void onAltaButtonClick() throws IOException {
+        System.out.println("creando cliente");
+        Stage stage = (Stage) btnAltaCliente.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Informes");
+        stage.setTitle("Clientes");
         stage.setScene(scene);
     }
 }
