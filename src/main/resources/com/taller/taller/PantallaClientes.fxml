@@ -5,8 +5,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaClientes">
    <children>
-      <Button layoutX="14.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-      <Button layoutX="526.0" layoutY="350.0" mnemonicParsing="false" onMousePressed="#onNuevoClienteButtonClick" prefHeight="25.0" prefWidth="150.0" text="Nuevo Cliente" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="btnVolverClientes" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="btnNuevoCliente" layoutX="526.0" layoutY="350.0" mnemonicParsing="false" onMousePressed="#onNuevoClienteButtonClick" prefHeight="25.0" prefWidth="150.0" text="Nuevo Cliente" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <ComboBox layoutX="323.0" layoutY="30.0" prefHeight="25.0" prefWidth="257.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
       <Label layoutX="263.0" layoutY="24.0" text="Cliente" />
    </children>

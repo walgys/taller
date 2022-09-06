@@ -18,6 +18,11 @@ public class InformeTrabajoRealizado {
     private Button btnImprimirTrabReal;
 
     @FXML
+    protected void initialize(){
+        //obtener datos del estado o Dao para poblar la vista.
+    }
+
+    @FXML
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverTrabReal.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));

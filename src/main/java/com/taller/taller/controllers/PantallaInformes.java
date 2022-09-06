@@ -19,6 +19,11 @@ public class PantallaInformes {
     private ImageView imgInfMen;
 
     @FXML
+    protected void initialize(){
+        //obtener datos del estado o Dao para poblar la vista.
+    }
+
+    @FXML
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverInformes.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
@@ -26,14 +31,14 @@ public class PantallaInformes {
         stage.setTitle("Menu Principal");
         stage.setScene(scene);
     }
-
+    @FXML
     protected void onInformeMensualButtonClick() throws IOException {
         //imprimir  al finalizar volver
         System.out.println("InformeMensual");
         Stage stage = (Stage) imgInfMen.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("InformeMensual.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Menu Principal");
+        stage.setTitle("Informe Mensual");
         stage.setScene(scene);
 
     }

@@ -18,16 +18,26 @@ public class PantallaClientes {
     private Button btnNuevoCliente;
 
     @FXML
+    protected void initialize(){
+        //obtener datos del estado o Dao para poblar la vista.
+    }
+
+    @FXML
     protected void onNuevoClienteButtonClick() throws IOException {
-        //operaciones de destrabar los inputs para crear un nuevo cliente.
+        Stage stage = (Stage) btnNuevoCliente.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        stage.setTitle("Menu Principal");
+        stage.setScene(scene);
+
     }
 
     @FXML
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverClientes.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaClientes.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 200, 250);
-        stage.setTitle("Confirmar turno");
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        stage.setTitle("Menu Principal");
         stage.setScene(scene);
     }
 

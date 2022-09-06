@@ -18,6 +18,11 @@ public class PantallaTrabajosRealizados {
     private Button btnNuevaPlanilla;
 
     @FXML
+    protected void initialize(){
+        //obtener datos del estado o Dao para poblar la vista.
+    }
+
+    @FXML
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverTrabajos.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
@@ -25,8 +30,8 @@ public class PantallaTrabajosRealizados {
         stage.setTitle("Menu Principal");
         stage.setScene(scene);
     }
-
-    protected void onNuevaPlanillaButtonClick() throws IOException {
+    @FXML
+    protected void onNuevaPlanillaClick() throws IOException {
         //imprimir  al finalizar volver
         System.out.println("NuevaPlanilla");
         Stage stage = (Stage) btnNuevaPlanilla.getScene().getWindow();
