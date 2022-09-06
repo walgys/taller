@@ -35,9 +35,9 @@ public class InformeMensual {
     protected void onImprimirButtonClick() throws IOException {
         System.out.println("imprimiendo informe");
         Stage stage = (Stage) btnVolverInfMen.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaInformes.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
-        stage.setTitle("Informes");
+        stage.setTitle("Menu Principal");
         stage.setScene(scene);
     }
 }
