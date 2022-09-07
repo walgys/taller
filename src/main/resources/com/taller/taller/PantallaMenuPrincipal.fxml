@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaMenuPrincipalController">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaMenuPrincipalController">
    <children>
       <FlowPane hgap="80.0" layoutX="25.0" layoutY="50.0" prefHeight="150.0" prefWidth="350.0" AnchorPane.topAnchor="40.0">
          <children>
@@ -32,12 +32,12 @@
       </Label>
       <FlowPane hgap="80.0" layoutX="25.0" layoutY="221.0" prefHeight="150.0" prefWidth="350.0" AnchorPane.bottomAnchor="20.0">
          <children>
-            <ImageView fx:id="worksheetButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onWorksheetButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+            <ImageView fx:id="informeDiarioButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onInformeDiarioButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
                <image>
-                  <Image url="@../../../assets/worksheet.png" />
+                  <Image url="@../../../assets/report.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="reportsButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onReportsButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+            <ImageView fx:id="informeMensualButton" fitHeight="121.0" fitWidth="132.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
                <image>
                   <Image url="@../../../assets/report.png" />
                </image>
@@ -52,12 +52,12 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="28.0" layoutY="200.0" prefHeight="26.0" prefWidth="131.0" text="Hoja de Trabajo">
+      <Label alignment="CENTER" layoutX="28.0" layoutY="200.0" prefHeight="26.0" prefWidth="131.0" text="Informe Diario">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="255.0" layoutY="200.0" prefHeight="26.0" prefWidth="83.0" text="Informes">
+      <Label alignment="CENTER" layoutX="231.0" layoutY="200.0" prefHeight="26.0" prefWidth="131.0" text="Informe Mensual">
          <font>
             <Font size="17.0" />
          </font>

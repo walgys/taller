@@ -25,8 +25,8 @@ public class PantallaTrabajosRealizados {
     @FXML
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverTrabajos.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAgenda.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Menu Principal");
         stage.setScene(scene);
     }
