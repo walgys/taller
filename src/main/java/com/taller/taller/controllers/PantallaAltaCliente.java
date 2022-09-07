@@ -26,7 +26,7 @@ public class PantallaAltaCliente {
     protected void onVolverButtonClick() throws IOException {
         Stage stage = (Stage) btnVolverAltaCliente.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaClientes.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Alta cliente");
         stage.setScene(scene);
     }
@@ -36,7 +36,7 @@ public class PantallaAltaCliente {
         System.out.println("creando cliente");
         Stage stage = (Stage) btnAltaCliente.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaClientes.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Clientes");
         stage.setScene(scene);
     }

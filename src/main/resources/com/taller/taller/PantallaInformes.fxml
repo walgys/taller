@@ -7,23 +7,17 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaInformes">
    <children>
       <Button fx:id="btnVolverInformes" layoutX="14.0" layoutY="352.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-      <ImageView fx:id="imgInfMen" fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="125.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+      <ImageView fx:id="imgInfMen" fitHeight="150.0" fitWidth="200.0" layoutX="130.0" layoutY="138.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
          <image>
             <Image url="@../../../assets/report.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="416.0" layoutY="100.0" prefHeight="17.0" prefWidth="150.0" text="Generar Informe Mensual" />
-      <ImageView fx:id="imgInfMen1" fitHeight="150.0" fitWidth="200.0" layoutX="416.0" layoutY="125.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+      <Label alignment="CENTER" layoutX="321.0" layoutY="113.0" prefHeight="17.0" prefWidth="150.0" text="Generar Informe Mensual" />
+      <ImageView fx:id="imgInfMen1" fitHeight="150.0" fitWidth="200.0" layoutX="321.0" layoutY="138.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
          <image>
             <Image url="@../../../assets/report.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="234.0" layoutY="100.0" prefHeight="17.0" prefWidth="132.0" text="Generar Informe Diario" />
-      <ImageView fx:id="imgInfMen2" fitHeight="150.0" fitWidth="200.0" layoutX="32.0" layoutY="125.0" onMousePressed="#onInformeMensualButtonClick" pickOnBounds="true" preserveRatio="true" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
-         <image>
-            <Image url="@../../../assets/report.png" />
-         </image>
-      </ImageView>
-      <Label alignment="CENTER" layoutX="32.0" layoutY="100.0" prefHeight="17.0" prefWidth="150.0" text="Imprimir Hoja de Trabajo" />
+      <Label alignment="CENTER" layoutX="139.0" layoutY="113.0" prefHeight="17.0" prefWidth="132.0" text="Generar Informe Diario" />
    </children>
 </AnchorPane>

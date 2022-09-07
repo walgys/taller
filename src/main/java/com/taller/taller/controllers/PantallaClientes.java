@@ -18,6 +18,9 @@ public class PantallaClientes {
     private Button btnNuevoCliente;
 
     @FXML
+    private Button btnEditarCliente;
+
+    @FXML
     protected void initialize(){
         //obtener datos del estado o Dao para poblar la vista.
     }
@@ -26,7 +29,17 @@ public class PantallaClientes {
     protected void onNuevoClienteButtonClick() throws IOException {
         Stage stage = (Stage) btnNuevoCliente.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 400);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Menu Principal");
+        stage.setScene(scene);
+
+    }
+
+    @FXML
+    protected void onEditarClienteButtonClick() throws IOException {
+        Stage stage = (Stage) btnEditarCliente.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Menu Principal");
         stage.setScene(scene);
 

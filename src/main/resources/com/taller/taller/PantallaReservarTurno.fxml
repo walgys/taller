@@ -28,7 +28,8 @@
             <ComboBox prefHeight="25.0" prefWidth="267.0" promptText="Tipo Documento" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="5.0" />
-               </GridPane.margin></ComboBox>
+               </GridPane.margin>
+            </ComboBox>
             <TextField promptText="Nombre y Apellido" GridPane.columnSpan="2" GridPane.rowIndex="1" />
             <TextField prefHeight="25.0" prefWidth="261.0" promptText="Número Documento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField promptText="Nro. Teléfono" GridPane.columnSpan="2" GridPane.rowIndex="3" />

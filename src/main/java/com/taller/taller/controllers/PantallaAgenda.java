@@ -15,6 +15,15 @@ public class PantallaAgenda {
     private Button btnVolverAgenda;
 
     @FXML
+    private Button btnAltaClienteAgenda;
+
+    @FXML
+    private Button btnConfirmarTurno;
+
+    @FXML
+    private Button btnTrabajosRealizadosAgenda;
+
+    @FXML
     protected void initialize(){
         //obtener datos del estado o Dao para poblar la vista.
     }
@@ -25,6 +34,33 @@ public class PantallaAgenda {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaMenuPrincipal.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 400);
         stage.setTitle("Menu Principal");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onAltaClienteButtonClick() throws IOException {
+        Stage stage = (Stage) btnAltaClienteAgenda.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Nuevo Cliente");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onConfirmarTurnoButtonClick() throws IOException {
+        Stage stage = (Stage) btnConfirmarTurno.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaReservarTurno.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Turno");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    protected void onTrabajosRealizadosButtonClick() throws IOException {
+        Stage stage = (Stage) btnTrabajosRealizadosAgenda.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaTrabajosRealizados.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Informe Trabajos Realizados");
         stage.setScene(scene);
     }
 }
