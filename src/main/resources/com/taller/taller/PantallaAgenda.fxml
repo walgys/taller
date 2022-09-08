@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
+<AnchorPane prefHeight="520.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
    <children>
       <Button fx:id="btnVolverAgenda" layoutX="25.0" layoutY="487.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" />
       <TabPane prefHeight="462.0" prefWidth="687.0" tabClosingPolicy="UNAVAILABLE">
@@ -110,7 +110,7 @@
                               <TableColumn prefWidth="275.0" text="Mecanico" />
                           </columns>
                         </TableView>
-                        <Button fx:id="btnConfirmarTurno" layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onMousePressed="#onConfirmarTurnoButtonClick" prefHeight="25.0" prefWidth="204.0" text="Confirmar Turno" />
+                        <Button fx:id="btnConfirmarTurno" layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onMousePressed="#onConfirmarTurnoButtonClick" prefHeight="25.0" prefWidth="204.0" text="Reservar Turno" />
                      </children>
                   </AnchorPane>
             </content>
