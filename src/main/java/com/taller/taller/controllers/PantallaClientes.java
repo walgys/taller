@@ -1,6 +1,7 @@
 package com.taller.taller.controllers;
 
 import com.taller.taller.MainApplication;
+import com.taller.taller.MainState;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class PantallaClientes {
 
@@ -18,11 +20,28 @@ public class PantallaClientes {
     private Button btnNuevoCliente;
 
     @FXML
-    private Button btnEditarCliente;
+    private Button btnAgregarVehiculoCliente;
+
+    private String lastScreen;
 
     @FXML
     protected void initialize(){
-        //obtener datos del estado o Dao para poblar la vista.
+        final Map<String, Object> state = MainState.getInstance().getState();
+        Map<String,Object> navigation;
+        try{
+            navigation = (Map<String, Object>) state.get("navigation");
+        }catch (Exception ex){
+            navigation = null;
+        }
+
+        if(navigation != null){
+            try {
+                lastScreen  = (String) navigation.get("actualScreen");
+                MainState.getInstance().setStateProperty(Map.of("actualScreen","PantallaClientes", "lastScreen",lastScreen),"navigation");
+            }catch (Exception ex){
+                return;
+            }
+        }
     }
 
     @FXML
@@ -30,17 +49,17 @@ public class PantallaClientes {
         Stage stage = (Stage) btnNuevoCliente.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Menu Principal");
+        stage.setTitle("Alta de Cliente");
         stage.setScene(scene);
 
     }
 
     @FXML
-    protected void onEditarClienteButtonClick() throws IOException {
-        Stage stage = (Stage) btnEditarCliente.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaCliente.fxml"));
+    protected void onAgregarVehiculoButtonClick() throws IOException {
+        Stage stage = (Stage) btnAgregarVehiculoCliente.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("PantallaAltaVehiculo.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Menu Principal");
+        stage.setTitle("Agregar un Vehículo");
         stage.setScene(scene);
 
     }

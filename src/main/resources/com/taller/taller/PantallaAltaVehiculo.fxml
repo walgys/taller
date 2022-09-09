@@ -80,5 +80,6 @@
          </TextField>
       </children>
    </GridPane>
-   <Button layoutX="20.0" layoutY="279.0" mnemonicParsing="false" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+   <Button fx:id="btnVolverAgregarVehiculos" layoutX="20.0" layoutY="279.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+   <Button fx:id="btnAgregarVehiculo" layoutX="528.0" layoutY="280.0" mnemonicParsing="false" onMousePressed="#onAgeregarVehiculoButtonClick" prefWidth="150.0" text="Agregar Vehículo" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
 </AnchorPane>
