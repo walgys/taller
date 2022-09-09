@@ -74,6 +74,6 @@
                <Font size="18.0" />
            </font>
        </Label>
-      <Button layoutX="429.0" layoutY="312.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Agregar Vehículo" />
+      <Button fx:id="btnAgregarVehiculo" layoutX="429.0" layoutY="312.0" mnemonicParsing="false" onMousePressed="#onAgeregarVehiculoButtonClick" prefHeight="25.0" prefWidth="150.0" text="Agregar Vehículo" />
    </children>
 </AnchorPane>

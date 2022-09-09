@@ -73,11 +73,11 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" text="Imprimir Ficha Mecanica " GridPane.halignment="CENTER">
+                              <Button fx:id="btnImpFichaMec" mnemonicParsing="false" onMousePressed="#onImprimirFichaClick" prefHeight="25.0" prefWidth="165.0" text="Imprimir Ficha Mecanica " GridPane.halignment="CENTER">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin></Button>
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Registrar Asistencia" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                              <Button fx:id="btnRegAsis" mnemonicParsing="false" onMousePressed="#onRegistrarAsistenciaClick" prefHeight="25.0" prefWidth="130.0" text="Registrar Asistencia" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin></Button>
