@@ -1,14 +1,19 @@
 package com.taller.taller;
 
+import com.taller.taller.dao.UserDao;
+import com.taller.taller.models.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
+
 public class MainApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         MainState.getInstance().setStateProperty(Map.of("actualScreen","MainApp"),"navigation");
