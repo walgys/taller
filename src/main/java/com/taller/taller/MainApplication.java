@@ -8,7 +8,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Map;
 
+
 public class MainApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         MainState.getInstance().setStateProperty(Map.of("actualScreen","MainApp"),"navigation");

@@ -50,6 +50,8 @@ public class PantallaMenuPrincipal {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Clientes");
         stage.setScene(scene);
+        PantallaClientes controller = fxmlLoader.getController();
+        controller.setData();
     }
 
     @FXML
@@ -59,6 +61,10 @@ public class PantallaMenuPrincipal {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Agenda");
         stage.setScene(scene);
+
+        PantallaAgenda controller = fxmlLoader.getController();
+        controller.setData();
+
     }
 
     @FXML

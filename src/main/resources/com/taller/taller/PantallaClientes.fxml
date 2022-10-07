@@ -5,10 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="553.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaClientes">
+<AnchorPane prefHeight="553.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaClientes">
    <children>
       <Button fx:id="btnVolverClientes" layoutX="30.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-      <Button fx:id="btnNuevoCliente" layoutX="411.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onNuevoClienteButtonClick" prefHeight="25.0" prefWidth="150.0" text="Nuevo Cliente" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="btnGuardarCliente" layoutX="411.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onEditarClienteButtonClick" prefHeight="25.0" prefWidth="150.0" text="Guardar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <Label layoutX="309.0" layoutY="22.0" text="Clientes" AnchorPane.topAnchor="22.0">
          <font>
             <Font size="24.0" />
@@ -25,7 +25,7 @@
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
            </rowConstraints>
            <children>
-            <ComboBox editable="true" prefHeight="25.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.columnSpan="2">
+            <ComboBox fx:id="cmbClientes" prefHeight="25.0" prefWidth="500.0" promptText="Seleccionar" GridPane.columnIndex="1" GridPane.columnSpan="2">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></ComboBox>
@@ -50,22 +50,22 @@
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
            </rowConstraints>
            <children>
-               <TextField promptText="Nombre y Apellido" GridPane.columnSpan="2">
+               <TextField fx:id="tfNombre" promptText="Nombre y Apellido" GridPane.columnSpan="2">
                    <GridPane.margin>
                        <Insets />
                    </GridPane.margin></TextField>
-               <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Calle" GridPane.columnSpan="2" GridPane.rowIndex="5" />
-               <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Numero" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
-               <DatePicker promptText="Fecha Nacimiento" GridPane.rowIndex="3" />
-               <TextField promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-               <TextField prefHeight="25.0" prefWidth="286.0" promptText="Numero Documento" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               <ComboBox prefWidth="150.0" promptText="Tipo Documento" GridPane.rowIndex="1" />
-               <TextField promptText="Nro. Telefono" GridPane.rowIndex="2">
+               <TextField fx:id="tfCalle" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Calle" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+               <TextField fx:id="tfCalleNro" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Numero" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+               <DatePicker fx:id="dpFechaNacimiento" promptText="Fecha Nacimiento" GridPane.rowIndex="3" />
+               <TextField fx:id="tfEmail" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <TextField fx:id="tfNroDocumento" prefHeight="25.0" prefWidth="286.0" promptText="Numero Documento" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <ComboBox fx:id="cmbTipoDocumento" prefWidth="150.0" promptText="Tipo Documento" GridPane.rowIndex="1" />
+               <TextField fx:id="tfNroTelefono" promptText="Nro. Telefono" GridPane.rowIndex="2">
                    <GridPane.margin>
                        <Insets right="10.0" />
                    </GridPane.margin>
                </TextField>
-               <TextField promptText="Provincia" GridPane.rowIndex="4">
+               <TextField fx:id="tfProvincia" promptText="Provincia" GridPane.rowIndex="4">
                    <opaqueInsets>
                        <Insets />
                    </opaqueInsets>
@@ -73,16 +73,16 @@
                        <Insets right="10.0" />
                    </GridPane.margin>
                </TextField>
-               <TextField promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <TextField fx:id="tfLocalidad" promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="4" />
            </children>
        </GridPane>
-      <TableView layoutX="20.0" layoutY="345.0" prefHeight="144.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <TableView fx:id="tblVehiculos" layoutX="20.0" layoutY="345.0" prefHeight="144.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <columns>
-          <TableColumn prefWidth="85.0" text="Patente" />
-            <TableColumn prefWidth="94.0" text="Marca" />
-          <TableColumn prefWidth="166.0" text="Modelo" />
-            <TableColumn prefWidth="85.0" text="Poliza" />
-            <TableColumn prefWidth="129.0" text="Aseguradora" />
+          <TableColumn fx:id="tblClmPatente" prefWidth="85.0" text="Patente" />
+            <TableColumn fx:id="tblClmMarca" prefWidth="94.0" text="Marca" />
+          <TableColumn fx:id="tblClmModelo" prefWidth="166.0" text="Modelo" />
+            <TableColumn fx:id="tblClmPoliza" prefWidth="85.0" text="Poliza" />
+            <TableColumn fx:id="tblClmAseguradora" prefWidth="230.0" text="Aseguradora" />
         </columns>
       </TableView>
       <Label layoutX="20.0" layoutY="311.0" text="Vehículos" AnchorPane.leftAnchor="20.0">
@@ -90,5 +90,7 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Button fx:id="btnNuevoCliente" layoutX="275.0" layoutY="508.0" mnemonicParsing="false" onMousePressed="#onNuevoClienteButtonClick" prefHeight="25.0" prefWidth="150.0" text="Nuevo Cliente" />
+      <Button fx:id="btnEditarVehiculoCliente" layoutX="370.0" layoutY="309.0" mnemonicParsing="false" onMousePressed="#onEditarVehiculoButtonClick" prefHeight="25.0" prefWidth="150.0" text="Editar Vehículo" />
    </children>
 </AnchorPane>

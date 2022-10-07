@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="520.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
+<AnchorPane prefHeight="520.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAgenda">
    <children>
       <Button fx:id="btnVolverAgenda" layoutX="25.0" layoutY="487.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
       <TabPane prefHeight="462.0" prefWidth="687.0" tabClosingPolicy="UNAVAILABLE">
@@ -15,11 +15,12 @@
                      <children>
                         <TableView fx:id="tblBuscarTurno" layoutY="79.0" prefHeight="289.0" prefWidth="647.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                           <columns>
-                            <TableColumn prefWidth="83.0" text="Especialidad" />
-                            <TableColumn prefWidth="169.0" text="Mecanico" />
-                              <TableColumn prefWidth="73.0" text="Hora" />
-                              <TableColumn prefWidth="219.0" text="Cliente " />
-                              <TableColumn prefWidth="142.0" text="Vehiculo" />
+                            <TableColumn fx:id="tblClmTurnoEspecialidad" prefWidth="83.0" text="Especialidad" />
+                            <TableColumn fx:id="tblClmTurnoMecanico" prefWidth="169.0" text="Mecanico" />
+                              <TableColumn fx:id="tblClmTurnoHora" prefWidth="73.0" text="Hora" />
+                              <TableColumn fx:id="tblClmTurnoCliente" prefWidth="219.0" text="Cliente " />
+                              <TableColumn fx:id="tblClmTurnoVehiculo" prefWidth="142.0" text="Vehiculo" />
+                              <TableColumn fx:id="tblClmTurnoId" prefWidth="142.0" text="id" visible="false" />
                           </columns>
                         </TableView>
                         <GridPane layoutX="20.0" layoutY="7.0" prefHeight="66.0" prefWidth="647.0">
@@ -104,13 +105,16 @@
                            <children>
                               <ComboBox fx:id="cbxEspecialidadReserva" prefHeight="25.0" prefWidth="204.0" promptText="Especialidad" GridPane.rowIndex="1" />
                               <DatePicker fx:id="dtpFechaTurnoReserva" prefHeight="25.0" prefWidth="150.0" promptText="Fecha Turno" />
-                              <Button fx:id="btnBuscarTurnosReserva" mnemonicParsing="false" prefHeight="25.0" prefWidth="203.0" text="Buscar" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Button fx:id="btnBuscarTurnosReserva" mnemonicParsing="false" onMousePressed="#onBuscarTurnosDisponiblesClick" prefHeight="25.0" prefWidth="203.0" text="Buscar" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                            </children>
                         </GridPane>
-                        <TableView fx:id="tblReservarTurno" layoutX="226.0" layoutY="20.0" prefHeight="397.0" prefWidth="472.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                        <TableView fx:id="tblReservarTurno" layoutX="226.0" layoutY="20.0" prefHeight="391.0" prefWidth="432.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="20.0">
                           <columns>
-                            <TableColumn prefWidth="158.0" text="Hora" />
-                              <TableColumn prefWidth="275.0" text="Mecanico" />
+                            <TableColumn fx:id="tblClmHora" prefWidth="140.0" text="Hora" />
+                              <TableColumn fx:id="tblClmMecanico" prefWidth="293.0" text="Mecanico" />
+                              <TableColumn fx:id="tblClmIDHora" prefWidth="75.0" text="id" visible="false" />
+                              <TableColumn fx:id="tblClmIDMecanico" prefWidth="75.0" text="id" visible="false" />
+                              <TableColumn fx:id="tblClmIDEspecialidad" prefWidth="75.0" text="id" visible="false" />
                           </columns>
                         </TableView>
                         <Button fx:id="btnConfirmarTurno" layoutX="14.0" layoutY="392.0" mnemonicParsing="false" onMousePressed="#onConfirmarTurnoButtonClick" prefHeight="25.0" prefWidth="150.0" text="Reservar Turno" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAltaCliente">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaAltaCliente">
    <children>
       <Button fx:id="btnVolverAltaCliente" layoutX="35.0" layoutY="454.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="35.0" />
       <Button fx:id="btnAltaCliente" layoutX="422.0" layoutY="454.0" mnemonicParsing="false" onMousePressed="#onAltaButtonClick" prefHeight="25.0" prefWidth="150.0" text="Guardar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="28.0" />
@@ -34,22 +34,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
-             <TextField promptText="Nombre y Apellido" GridPane.columnSpan="2" GridPane.rowIndex="1">
+             <TextField fx:id="tfNombre" promptText="Nombre y Apellido" GridPane.columnSpan="2" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></TextField>
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Calle" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-            <TextField maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Numero" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
-            <DatePicker promptText="Fecha Nacimiento" GridPane.rowIndex="4" />
-            <TextField promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField promptText="Numero Documento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox prefWidth="150.0" promptText="Tipo Documento" GridPane.rowIndex="2" />
-            <TextField promptText="Nro. Telefono" GridPane.rowIndex="3">
+            <TextField fx:id="tfCalle" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="420.0" promptText="Calle" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <TextField fx:id="tfCalleNro" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="100.0" promptText="Numero" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dpFechaNacimiento" promptText="Fecha Nacimiento" GridPane.rowIndex="4" />
+            <TextField fx:id="tfEmail" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tfNroDocumento" promptText="Numero Documento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cmbTipoDocumento" prefWidth="150.0" promptText="Tipo Documento" GridPane.rowIndex="2" />
+            <TextField fx:id="tfNroTelefono" promptText="Nro. Telefono" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Provincia" GridPane.rowIndex="5">
+            <TextField fx:id="tfProvincia" promptText="Provincia" GridPane.rowIndex="5">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -57,16 +57,16 @@
                   <Insets right="10.0" />
                </GridPane.margin>
             </TextField>
-            <TextField promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tfLocalidad" promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-       <TableView layoutX="20.0" layoutY="345.0" prefHeight="144.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+       <TableView fx:id="tblVehiculos" layoutX="20.0" layoutY="345.0" prefHeight="144.0" prefWidth="560.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
            <columns>
-               <TableColumn prefWidth="85.0" text="Patente" />
-               <TableColumn prefWidth="94.0" text="Marca" />
-               <TableColumn prefWidth="166.0" text="Modelo" />
-               <TableColumn prefWidth="85.0" text="Poliza" />
-               <TableColumn prefWidth="129.0" text="Aseguradora" />
+               <TableColumn fx:id="tblClmPatente" prefWidth="85.0" text="Patente" />
+               <TableColumn fx:id="tblClmMarca" prefWidth="94.0" text="Marca" />
+               <TableColumn fx:id="tblClmModelo" prefWidth="166.0" text="Modelo" />
+               <TableColumn fx:id="tblClmPoliza" prefWidth="85.0" text="Poliza" />
+               <TableColumn fx:id="tblClmAseguradora" prefWidth="129.0" text="Aseguradora" />
            </columns>
        </TableView>
        <Label layoutX="20.0" layoutY="311.0" text="Vehículos" AnchorPane.leftAnchor="20.0">
