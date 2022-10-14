@@ -63,7 +63,7 @@ public class PantallaTrabajosRealizados {
 
     private Turno turno;
 
-    ActividadTurnoDao actividadTurnoDao = new ActividadTurnoDao();
+    ActividadTurnoDao actividadTurnoDao = ActividadTurnoDao.instance();
 
     @FXML
     protected void initialize(){
