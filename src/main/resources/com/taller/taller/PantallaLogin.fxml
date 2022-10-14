@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="187.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.MainController">
+<AnchorPane prefHeight="187.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.MainController">
    <children>
       <GridPane prefHeight="90.0" prefWidth="400.0" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="80.0">
         <columnConstraints>
@@ -23,13 +23,13 @@
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></Label>
-            <TextField prefHeight="25.0" prefWidth="281.0" GridPane.columnIndex="1">
+            <TextField fx:id="userInput" prefHeight="25.0" prefWidth="281.0" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>
             </TextField>
             <Label text="Contraseña" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <TextField prefHeight="25.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="passInput" prefHeight="25.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>

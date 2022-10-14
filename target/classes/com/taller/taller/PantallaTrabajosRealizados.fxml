@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="555.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaTrabajosRealizados">
+<AnchorPane prefHeight="555.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaTrabajosRealizados">
    <children>
       <Button fx:id="btnVolverTrabajos" layoutX="44.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-      <Button fx:id="btnNuevaPlanilla" layoutX="436.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onNuevaPlanillaClick" prefHeight="25.0" prefWidth="150.0" text="Guardar" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <Label layoutX="184.0" layoutY="14.0" text="Trabajos Realizados" AnchorPane.topAnchor="20.0">
          <font>
             <Font size="30.0" />
@@ -26,36 +25,29 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ComboBox prefHeight="25.0" prefWidth="152.0" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets left="20.0" right="10.0" />
-               </GridPane.margin>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets></ComboBox>
-            <Spinner prefHeight="25.0" prefWidth="141.0" GridPane.columnIndex="3" GridPane.halignment="CENTER">
-               <GridPane.margin>
-                  <Insets right="20.0" />
-               </GridPane.margin></Spinner>
             <Label text="Tiempo empleado" GridPane.columnIndex="2" GridPane.halignment="CENTER">
                <GridPane.margin>
                   <Insets left="15.0" />
                </GridPane.margin>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="131.0" text="Agregar" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Button fx:id="btnAgregar" mnemonicParsing="false" onMousePressed="#onAgregarActividadButtonClick" prefHeight="25.0" prefWidth="168.0" text="Agregar" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="10.0" right="20.0" />
                </GridPane.margin></Button>
-            <Label text="Actividad Realizada" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+            <Label text="Actividad Realizada" GridPane.halignment="LEFT">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin></Label>
-            <Label text="Especialidad" GridPane.halignment="CENTER">
+            <TextField fx:id="tfTiempoEmpleado" layoutX="137.0" layoutY="69.0" prefHeight="28.0" prefWidth="97.0" GridPane.columnIndex="3">
                <GridPane.margin>
-                  <Insets />
+                  <Insets right="20.0" />
+               </GridPane.margin></TextField>
+            <ComboBox fx:id="cmbActividadRealizada" prefHeight="25.0" prefWidth="188.0" promptText="Seleccionar" GridPane.columnIndex="1" GridPane.columnSpan="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
                </GridPane.margin>
-            </Label>
-            <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            </ComboBox>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onMousePressed="#onDeleteActividadButtonClick" prefHeight="25.0" prefWidth="87.0" text="Eliminar" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <GridPane layoutY="74.0" prefHeight="59.0" prefWidth="618.0">
@@ -79,9 +71,19 @@
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin></Label>
-            <TextField editable="false" prefHeight="25.0" prefWidth="124.0" GridPane.columnIndex="1" />
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField editable="false" GridPane.columnIndex="3">
+            <TextField fx:id="tfCliente" editable="false" prefHeight="25.0" prefWidth="124.0" GridPane.columnIndex="1" />
+            <TextField fx:id="tfAseguradora" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tfVehiculo" editable="false" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="Especialidad" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tfEspecialidad" editable="false" prefHeight="25.0" prefWidth="257.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
@@ -89,13 +91,12 @@
          </children>
       </GridPane>
       <Separator layoutX="20.0" layoutY="148.0" prefHeight="4.0" prefWidth="529.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-      <TableView layoutX="20.0" layoutY="254.0" prefHeight="244.0" prefWidth="578.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+      <TableView fx:id="tblTrabajosRealizados" layoutX="20.0" layoutY="254.0" prefHeight="244.0" prefWidth="578.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <columns>
-          <TableColumn prefWidth="165.0" text="Especialidad" />
-          <TableColumn prefWidth="237.0" text="Actividad realizada" />
-            <TableColumn prefWidth="139.0" text="Tiempo empleado" />
+          <TableColumn fx:id="tblClmActividadRealizada" prefWidth="363.0" text="Actividad realizada" />
+            <TableColumn fx:id="tblClmTiempoEmpleado" prefWidth="214.0" text="Tiempo empleado" />
+            <TableColumn fx:id="tblClmIDActividadTurno" editable="false" prefWidth="214.0" sortable="false" text="id" visible="false" />
         </columns>
       </TableView>
-      <Button layoutX="284.0" layoutY="355.0" mnemonicParsing="false" text="Eliminar" AnchorPane.bottomAnchor="20.0" />
    </children>
 </AnchorPane>

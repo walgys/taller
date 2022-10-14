@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="359.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaReservarTurno">
+<AnchorPane prefHeight="359.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.taller.taller.controllers.PantallaReservarTurno">
    <children>
       <Button fx:id="btnVolverReservar" layoutX="42.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onVolverButtonClick" prefHeight="25.0" prefWidth="150.0" text="&lt;&lt; Volver" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" />
       <Button fx:id="btnReservar" layoutX="408.0" layoutY="355.0" mnemonicParsing="false" onMousePressed="#onReservarButtonClick" prefHeight="25.0" prefWidth="150.0" text="Reservar Turno" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="40.0" />
@@ -24,24 +24,24 @@
             <RowConstraints maxHeight="189.0" minHeight="-Infinity" prefHeight="35.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ComboBox prefHeight="25.0" prefWidth="267.0" promptText="Tipo Documento" GridPane.rowIndex="2">
+            <ComboBox fx:id="cmbTipoDocumento" prefHeight="25.0" prefWidth="267.0" promptText="Tipo Documento" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin>
             </ComboBox>
-            <TextField promptText="Nombre y Apellido" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <TextField prefHeight="25.0" prefWidth="261.0" promptText="Número Documento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField promptText="Nro. Teléfono" GridPane.columnSpan="2" GridPane.rowIndex="3" />
-            <TextField promptText="Aseguradora" GridPane.rowIndex="6">
+            <TextField fx:id="tfNombre" promptText="Nombre y Apellido" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <TextField fx:id="tfNroDocumento" prefHeight="25.0" prefWidth="261.0" promptText="Número Documento" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfNroTelefono" promptText="Nro. Teléfono" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <TextField fx:id="tfAseguradora" promptText="Aseguradora" GridPane.rowIndex="6">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin></TextField>
-            <TextField promptText="Modelo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField promptText="Marca" GridPane.rowIndex="5">
+            <TextField fx:id="tfModelo" promptText="Modelo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tfMarca" promptText="Marca" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets right="5.0" />
                </GridPane.margin></TextField>
-            <TextField promptText="Nro. Póliza" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="tfNroPoliza" promptText="Nro. Póliza" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <Label text="Titular">
                <font>
                   <Font size="18.0" />
