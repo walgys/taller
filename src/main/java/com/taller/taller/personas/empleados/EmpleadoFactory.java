@@ -22,7 +22,7 @@ public class EmpleadoFactory {
     public Empleado crearEmpleado(final TIPOEMPLEADO tipoUsuario){
         switch (tipoUsuario){
             case EncargadoRecepcion:
-                return new EmpleadoUsuario("",null,"","",null,TIPOEMPLEADO.EncargadoTaller,null,"","");
+                return new EmpleadoUsuario("",null,"","",null,TIPOEMPLEADO.EncargadoRecepcion,null,"","");
             case MecanicoChapaPintura:
                 return new Empleado("",null,"","",null,TIPOEMPLEADO.MecanicoChapaPintura,null);
             case MecanicoFreno:
@@ -30,13 +30,15 @@ public class EmpleadoFactory {
             case MecanicoGeneral:
                 return new Empleado("",null,"","",null,TIPOEMPLEADO.MecanicoGeneral,null);
             case EncargadoTaller:
-                return new Empleado("",null,"","",null,TIPOEMPLEADO.EncargadoTaller,null);
+                return new EmpleadoUsuario("",null,"","",null,TIPOEMPLEADO.EncargadoTaller,null,"","");
             case MecanicoElecticidad:
                 return new Empleado("",null,"","",null,TIPOEMPLEADO.MecanicoElecticidad,null);
             case MecanicoEncendidoCarburacion:
                 return new Empleado("",null,"","",null,TIPOEMPLEADO.MecanicoEncendidoCarburacion,null);
             case MecanicoTrenAmortiguacion:
                 return new Empleado("",null,"","",null,TIPOEMPLEADO.MecanicoTrenAmortiguacion,null);
+            case GerenteOperaciones:
+                return new EmpleadoUsuario("",null,"","",null,TIPOEMPLEADO.GerenteOperaciones,null,"","");
             default:
                 return null;
         }
