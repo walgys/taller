@@ -55,6 +55,9 @@ public class PantallaReservarTurno {
     @FXML
     private ComboBox  cmbTipoDocumento;
 
+    private TurnoDao turnoDao = TurnoDao.instance();
+    private TipoDocumentoDao tipoDocumentoDao = TipoDocumentoDao.instance();
+
     @FXML
     protected void initialize(){
         final Map<String, Object> state = MainState.getInstance().getState();
@@ -100,8 +103,6 @@ public class PantallaReservarTurno {
             PantallaAgenda controller = fxmlLoader.getController();
             controller.setData();
 
-            TurnoDao turnoDao = new TurnoDao();
-
             Turno turno = new Turno();
 
             Horario horario = new Horario();
@@ -122,7 +123,7 @@ public class PantallaReservarTurno {
             cliente.setNombre(tfNombre.getText());
             cliente.setTelefono(tfNroTelefono.getText());
             cliente.setDni(tfNroDocumento.getText());
-            TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
+
             cliente.setTipoDocumento(tipoDocumentoDao.getByDescripcion(cmbTipoDocumento.getValue().toString()));
             turno.setCliente(cliente);
 
@@ -142,7 +143,6 @@ public class PantallaReservarTurno {
     public void setData(ReservaTurno reservaTurno){
 
         cmbTipoDocumento.getItems().clear();
-        TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
         List<TipoDocumento> list = tipoDocumentoDao.getAll();
         for (TipoDocumento tipoDocumento : list) {
             cmbTipoDocumento.getItems().add(tipoDocumento.getDescripcion());

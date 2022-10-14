@@ -77,9 +77,10 @@ public class PantallaAgenda {
     @FXML
     private TableColumn<ReservaTurno, String> tblClmTurnoId;
 
-    List<ReservaTurno> busqquedaTurno = new ArrayList<>();
+    private List<ReservaTurno> busqquedaTurno = new ArrayList<>();
 
-    TurnoDao turnoDao = new TurnoDao();
+    private TurnoDao turnoDao = TurnoDao.instance();
+    private EspecialidadDao especialidadDao = EspecialidadDao.instance();
 
     @FXML
     private DatePicker dtpFechaTurnoReserva;
@@ -126,7 +127,6 @@ public class PantallaAgenda {
 
         tblReservarTurno.getItems().clear();
 
-        EspecialidadDao especialidadDao = new EspecialidadDao();
         Especialidad especialidad = especialidadDao.getByDescripcion(cbxEspecialidadReserva.getValue().toString());
 
         List<HorarioMecanico> horariosDisponibles = turnoDao.searchByEspecialidadFecha(especialidad.getId(), dtpFechaTurnoReserva.getValue());
@@ -188,7 +188,7 @@ public class PantallaAgenda {
 
     public void setData() {
         cbxEspecialidadReserva.getItems().clear();
-        EspecialidadDao especialidadDao = new EspecialidadDao();
+
         List<Especialidad> list = especialidadDao.getAll();
         for (Especialidad especialidad : list) {
             cbxEspecialidadReserva.getItems().add(especialidad.getDescripcion());

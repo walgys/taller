@@ -63,7 +63,8 @@ public class PantallaTrabajosRealizados {
 
     private Turno turno;
 
-    ActividadTurnoDao actividadTurnoDao = ActividadTurnoDao.instance();
+    private ActividadTurnoDao actividadTurnoDao = ActividadTurnoDao.instance();
+    private TurnoDao turnoDao = TurnoDao.instance();
 
     @FXML
     protected void initialize(){
@@ -128,7 +129,6 @@ public class PantallaTrabajosRealizados {
 
     public void setData(ReservaTurno reservaTurno) {
 
-        TurnoDao turnoDao = new TurnoDao();
         Turno turno = turnoDao.getById(reservaTurno.getIdTurno());
         this.turno = turno;
 

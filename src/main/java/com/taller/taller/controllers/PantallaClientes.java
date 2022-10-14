@@ -84,7 +84,8 @@ public class PantallaClientes {
 
     private String lastScreen;
 
-    private ClienteDao clienteDao = new ClienteDao();
+    private ClienteDao clienteDao = ClienteDao.instance();
+    private TipoDocumentoDao tipoDocumentoDao = TipoDocumentoDao.instance();
 
     @FXML
     protected void initialize(){
@@ -141,7 +142,6 @@ public class PantallaClientes {
             cliente.setProvincia(tfProvincia.getText());
             cliente.setFechaNacimiento(dpFechaNacimiento.getValue());
 
-            TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
             TipoDocumento tipoDocumento = tipoDocumentoDao.getByDescripcion(cmbTipoDocumento.getValue().toString());
             cliente.setTipoDocumento(tipoDocumento);
 
@@ -206,7 +206,7 @@ public class PantallaClientes {
     public void setData(){
 
         cmbTipoDocumento.getItems().clear();
-        TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
+
         List<TipoDocumento> tdlist = tipoDocumentoDao.getAll();
         for (TipoDocumento tipoDocumento : tdlist) {
             cmbTipoDocumento.getItems().add(tipoDocumento.getDescripcion());

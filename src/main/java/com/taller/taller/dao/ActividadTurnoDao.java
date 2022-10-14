@@ -2,13 +2,13 @@ package com.taller.taller.dao;
 
 import com.taller.taller.hibernate.HibernateUtil;
 import com.taller.taller.models.ActividadesTurno;
-import com.taller.taller.personas.empleados.EmpleadoFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ActividadTurnoDao {
+public class ActividadTurnoDao implements IDao<ActividadesTurno> {
+
     private Transaction transaction;
 
     private static final Object LOCK_OBJECT = new Object();
@@ -23,6 +23,36 @@ public class ActividadTurnoDao {
             }
         }
         return _instance;
+    }
+
+    @Override
+    public List<ActividadesTurno> getAll() {
+        List<ActividadesTurno> objects = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            objects = session.createQuery("from ActividadesTurno", ActividadesTurno.class).list();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return objects;
+    }
+
+    @Override
+    public ActividadesTurno getById(int id) {
+        ActividadesTurno object = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            object = session.createQuery("from ActividadesTurno td where td.id = :id", ActividadesTurno.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return object;
     }
 
     public void save(ActividadesTurno actividadesTurno){
@@ -67,5 +97,4 @@ public class ActividadTurnoDao {
             e.printStackTrace();
         }
     }
-
 }

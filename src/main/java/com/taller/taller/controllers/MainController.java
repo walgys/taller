@@ -21,10 +21,12 @@ public class MainController {
     @FXML
     private TextField passInput;
 
+    private UsuarioDao usuarioDao = UsuarioDao.instance();
+
     @FXML
     protected void onLoginButtonClick() throws IOException {
 
-        UsuarioDao usuarioDao = new UsuarioDao();
+
 
         String user = userInput.getText();
         String pass = passInput.getText();

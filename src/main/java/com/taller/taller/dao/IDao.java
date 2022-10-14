@@ -1,17 +1,17 @@
 package com.taller.taller.dao;
 
 import com.taller.taller.models.Actividad;
+import com.taller.taller.models.ActividadesTurno;
 
 import java.util.List;
 
-public interface IDao {
+public interface IDao<T>  {
 
-    public <T> List<T> getAll();
+    List<T> getAll();
 
-    public <T> T buscarPorID(int id);
+    T getById(int id);
 
-    public void save(Object entity);
+    void save(T entity);
 
-    public void delete(Object entity);
-
+    void delete(T entity);
 }

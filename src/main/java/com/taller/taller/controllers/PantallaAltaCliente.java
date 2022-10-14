@@ -71,6 +71,9 @@ public class PantallaAltaCliente {
 
     private List<Vehiculo> vehiculosList = new ArrayList<>();
 
+    private ClienteDao clienteDao = ClienteDao.instance();
+    private TipoDocumentoDao tipoDocumentoDao = TipoDocumentoDao.instance();
+
     @FXML
     protected void initialize(){
         final Map<String, Object> state = MainState.getInstance().getState();
@@ -117,8 +120,6 @@ public class PantallaAltaCliente {
         final Optional<ButtonType> buttonType = a.showAndWait();
         if(buttonType.get() == ButtonType.OK){
 
-            ClienteDao clienteDao = new ClienteDao();
-
             Cliente cliente = new Cliente();
             cliente.setCalle(tfCalle.getText());
             cliente.setDni(tfNroDocumento.getText());
@@ -131,7 +132,6 @@ public class PantallaAltaCliente {
             cliente.addVehiculos(vehiculosList);
             cliente.setFechaNacimiento(dpFechaNacimiento.getValue());
 
-            TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
             TipoDocumento tipoDocumento = tipoDocumentoDao.getByDescripcion(cmbTipoDocumento.getValue().toString());
             cliente.setTipoDocumento(tipoDocumento);
 
@@ -148,7 +148,7 @@ public class PantallaAltaCliente {
     public void setData(){
 
         cmbTipoDocumento.getItems().clear();
-        TipoDocumentoDao tipoDocumentoDao = new TipoDocumentoDao();
+
         List<TipoDocumento> list = tipoDocumentoDao.getAll();
         for (TipoDocumento tipoDocumento : list) {
             cmbTipoDocumento.getItems().add(tipoDocumento.getDescripcion());

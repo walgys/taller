@@ -9,9 +9,23 @@ import org.hibernate.Transaction;
 import java.time.LocalDate;
 import java.util.List;
 
-public class TurnoDao {
+public class TurnoDao implements IDao<Turno> {
 
     private Transaction transaction;
+
+    private static final Object LOCK_OBJECT = new Object();
+    private static volatile TurnoDao _instance = null;
+
+    public static TurnoDao instance(){
+        if (_instance == null) {
+            synchronized (LOCK_OBJECT) {
+                if (_instance == null) {
+                    _instance = new TurnoDao();
+                }
+            }
+        }
+        return _instance;
+    }
 
     public List<HorarioMecanico> searchByEspecialidadFecha(int especialidadID, LocalDate fecha){
         List<HorarioMecanico> objects = null;
@@ -62,6 +76,35 @@ public class TurnoDao {
             }
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void delete(Turno entity) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.delete(entity);
+            transaction.commit();
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Turno> getAll() {
+        List<Turno> objects = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            objects = session.createQuery("from Turno", Turno.class).list();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return objects;
     }
 
     public Turno getById(int id){

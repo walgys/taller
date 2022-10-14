@@ -56,6 +56,8 @@ public class PantallaAltaVehiculo {
 
     private Vehiculo vehiculo;
 
+    private VehiculoDao vehiculoDao = VehiculoDao.instance();
+
     @FXML
     protected void initialize(){
         final Map<String, Object> state = MainState.getInstance().getState();
@@ -125,8 +127,6 @@ public class PantallaAltaVehiculo {
                 vehiculo.setNroMotor(tfNroMotor.getText());
                 vehiculo.setNroPoliza(tfNroPoliza.getText());
                 vehiculo.setPatente(tfPatente.getText());
-
-                VehiculoDao vehiculoDao = new VehiculoDao();
                 vehiculoDao.save(vehiculo);
 
                 PantallaClientes controller = fxmlLoader.getController();

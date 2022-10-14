@@ -7,9 +7,23 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ClienteDao {
+public class ClienteDao implements IDao<Cliente> {
 
     private Transaction transaction;
+
+    private static final Object LOCK_OBJECT = new Object();
+    private static volatile ClienteDao _instance = null;
+
+    public static ClienteDao instance(){
+        if (_instance == null) {
+            synchronized (LOCK_OBJECT) {
+                if (_instance == null) {
+                    _instance = new ClienteDao();
+                }
+            }
+        }
+        return _instance;
+    }
 
     public void save(Cliente cliente){
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -19,6 +33,21 @@ public class ClienteDao {
             } else {
                 session.save(cliente);
             }
+            transaction.commit();
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
+
+    public void delete(Cliente entity) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.delete(entity);
             transaction.commit();
 
         } catch (Exception e) {

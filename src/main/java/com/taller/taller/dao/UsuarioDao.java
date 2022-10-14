@@ -7,8 +7,23 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class UsuarioDao {
+public class UsuarioDao implements IDao<Usuario> {
+
     private Transaction transaction;
+
+    private static final Object LOCK_OBJECT = new Object();
+    private static volatile UsuarioDao _instance = null;
+
+    public static UsuarioDao instance(){
+        if (_instance == null) {
+            synchronized (LOCK_OBJECT) {
+                if (_instance == null) {
+                    _instance = new UsuarioDao();
+                }
+            }
+        }
+        return _instance;
+    }
 
     public boolean isValidUser(String username, String password){
         boolean isValidUser = false;
@@ -66,5 +81,35 @@ public class UsuarioDao {
             e.printStackTrace();
         }
         return usuario;
+    }
+
+    @Override
+    public List<Usuario> getAll() {
+        List<Usuario> usuarios = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            usuarios = session.createQuery("from Usuario", Usuario.class).list();
+            //users.forEach(s -> System.out.println(s.getUsername()));
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+        return usuarios;
+    }
+
+    @Override
+    public Usuario getById(int id) {
+        return null;
+    }
+
+    @Override
+    public void save(Usuario entity) {
+
+    }
+
+    @Override
+    public void delete(Usuario entity) {
+
     }
 }
