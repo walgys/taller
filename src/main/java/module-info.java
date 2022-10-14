@@ -14,5 +14,7 @@ module com.taller.taller {
     opens com.taller.taller.controllers to javafx.fxml;
     opens com.taller.taller.bean to javafx.fxml;
     opens com.taller.taller.models to org.hibernate.orm.core;
+    exports com.taller.taller.bean.empleados;
+    opens com.taller.taller.bean.empleados to javafx.fxml;
 
 }

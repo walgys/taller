@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface IDao {
 
-    public List<Object> getAll();
+    public <T> List<T> getAll();
 
-    public Object buscarPorID(int id);
+    public <T> T buscarPorID(int id);
 
-    public void grabar(Object entity);
+    public void save(Object entity);
 
-    public void eliminar(Object entity);
+    public void delete(Object entity);
 
 }
