@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainController {
+
     @FXML
     private Button loginButton;
 
@@ -25,8 +26,6 @@ public class MainController {
 
     @FXML
     protected void onLoginButtonClick() throws IOException {
-
-
 
         String user = userInput.getText();
         String pass = passInput.getText();
